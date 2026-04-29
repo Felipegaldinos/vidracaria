@@ -1,0 +1,316 @@
+:root {
+    --primary: #0a2342; /* Azul Marinho Escuro */
+    --accent: #3498db;  /* Azul Brilhante */
+    --light: #f8f9fa;
+    --dark: #121212;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+#navbar {
+    background: rgba(10, 35, 66, 0.95);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-menu { display: flex; list-style: none; }
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover { color: var(--accent); }
+
+/* Hero */
+.hero {
+    height: 100vh;
+    background: url('https://orientvidros.com.br/wp-content/uploads/2020/05/21-orcamento-orient-vidros-vidracaria-em-sp.jpg') center/cover;
+}
+
+.hero-overlay {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+}
+
+.hero-content { color: #fff; text-align: left; }
+.hero-content h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 4px;
+    margin-right: 1rem;
+    transition: 0.3s;
+}
+
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #2980b9; transform: translateY(-3px); }
+.btn-outline { border: 2px solid #fff; color: #fff; }
+.btn-outline:hover { background: #fff; color: #000; }
+
+/* Sections */
+.section { padding: 100px 0; }
+.bg-light { background: var(--light); }
+.container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-img img { width: 100%; border-radius: 8px; box-shadow: 20px 20px 0 var(--primary); }
+
+.check-list { list-style: none; margin-top: 20px; }
+.check-list li { margin-bottom: 10px; font-weight: bold; color: var(--primary); }
+
+/* Services */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-box {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.service-box:hover { transform: translateY(-10px); }
+.service-box img { width: 100%; height: 250px; object-fit: cover; }
+.service-info { padding: 25px; }
+.service-info h3 { margin-bottom: 10px; font-family: 'Oswald', sans-serif; }
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    filter: grayscale(40%);
+    transition: 0.5s;
+}
+
+.gallery-item img:hover { filter: grayscale(0); transform: scale(1.02); }
+
+/* Contact Form */
+.contact-section {
+    background: linear-gradient(rgba(10,35,66,0.9), rgba(10,35,66,0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1500&q=80');
+    padding: 100px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.contact-card { max-width: 600px; margin: auto; }
+.contact-card input, .contact-card select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+footer { background: var(--dark); color: #888; padding: 40px 0; text-align: center; }
+/* ============================================================
+   RESPONSIVIDADE SOB MEDIDA - GLASS PRIME
+   ============================================================ */
+
+/* Tablets e iPads (Abaixo de 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .hero-content h1 {
+        font-size: 3.2rem;
+    }
+
+    .about-grid {
+        gap: 30px;
+    }
+}
+
+/* Celulares Grandes e Tablets em modo Retrato (Abaixo de 768px) */
+@media (max-width: 768px) {
+    /* Ajustes de Navegação */
+    .nav-menu {
+        display: none; /* Idealmente substituir por um menu hambúrguer via JS */
+    }
+
+    .nav-container {
+        justify-content: center;
+    }
+
+    /* Ajustes do Hero (Destaque) */
+    .hero {
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .btn {
+        margin-right: 0;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Transformando Grids em Coluna Única */
+    .about-grid, 
+    .services-container, 
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-img img {
+        box-shadow: 10px 10px 0 var(--primary); /* Sombra menor para telas menores */
+    }
+
+    .about-text {
+        text-align: center;
+    }
+
+    .title-left::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .check-list li {
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* Ajustes de Seção */
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    /* Formulário */
+    .contact-card {
+        padding: 0 10px;
+    }
+}
+
+/* Celulares Pequenos (Abaixo de 480px) */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .service-box img {
+        height: 200px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+/* Ajuste para telas muito largas (Ultrawide) */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1400px;
+    }
+}
